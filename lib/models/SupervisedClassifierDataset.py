@@ -9,7 +9,7 @@ class SupervisedClassifierDataset(Base):
     This table stores labeled data for training/testing classification models.
     """
     __tablename__ = 'supervised_classifier_dataset'
-    __table_args__ = {'schema': 'pg_default'}  # As shown in the image
+    __table_args__ = {'schema': 'fyp'}  # As shown in the image
 
     # Primary key columns (assuming composite key of start_date, end_date, ticker)
     start_date = Column(Date, primary_key=True)
