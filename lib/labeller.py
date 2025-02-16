@@ -63,6 +63,7 @@ def load_data(ticker: str):
                 'high': market_data.high,  # Add high
                 'low': market_data.low,    # Add low
                 'volume': market_data.volume,  # Added volume
+                'rsi_14': indicators.rsi_14, # Add RSI 14
                 'ema_20': indicators.ema_20,
                 'ema_50': indicators.ema_50,
                 'ema_200': indicators.ema_200

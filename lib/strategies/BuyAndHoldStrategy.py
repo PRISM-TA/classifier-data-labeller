@@ -1,4 +1,4 @@
-from BaseStrategy import BaseStrategy
+from lib.strategies.BaseStrategy import BaseStrategy
 import pandas as pd
 
 class BuyAndHoldStrategy(BaseStrategy):
