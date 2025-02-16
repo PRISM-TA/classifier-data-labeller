@@ -1,5 +1,7 @@
 import pandas as pd
-from BaseStrategy import BuyAndHoldStrategy, SellAndHoldStrategy, MeanReversionStrategy
+from BuyAndHoldStrategy import BuyAndHoldStrategy
+from SellAndHoldStrategy import SellAndHoldStrategy
+from MeanReversionStrategy import MeanReversionStrategy
 
 def test_buy_and_hold_strategy():
     # Create a DataFrame with closing prices
