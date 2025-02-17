@@ -4,12 +4,13 @@ from lib.strategies.SellAndHoldStrategy import SellAndHoldStrategy
 from lib.strategies.MeanReversionStrategy import MeanReversionStrategy
 
 import numpy as np
+from datetime import datetime
 
-ticker_df = load_data("AAPL")
+ticker = "MSFT"
+ticker_df = load_data(ticker)
 
-# TODO: Wrap into a function + upload logic
 window_size = 20
-
+label_set = {}
 for offset in range(len(ticker_df)):
     window_df = ticker_df.iloc[offset:offset + window_size]
     if len(window_df) < window_size:
@@ -23,11 +24,14 @@ for offset in range(len(ticker_df)):
     MR_return_percentage = MeanReversionStrategy().execute(window_df)
 
     label = np.argmax([BaH_return_percentage, MR_return_percentage, SaH_return_percentage])
+    pkey = f"{ticker}_{start_date.strftime('%Y-%m-%d')}"
+    timestamp = datetime.now().isoformat()
+    label_set[pkey] = {
+        'ticker': ticker,
+        'start_date': start_date.strftime('%Y-%m-%d'),
+        'end_date': end_date.strftime('%Y-%m-%d'),
+        'pattern': ['uptrend', 'sideways', 'downtrend'][label],
+        'timestamp': timestamp
+    }
 
-    print(f"Start date: {start_date}, End date: {end_date}")
-    print(f"Label: {['Buy and Hold', 'Sell and Hold', 'Mean Reversion'][label]}")
-    # print(f"Buy and Hold: {BaH_return_percentage}")
-    # print(f"Sell and Hold: {SaH_return_percentage}")
-    # print(f"Mean Reversion: {MR_return_percentage}")
-    
-# print(ticker_df)
+save_labels(label_set, filename="auto_labels.csv")
