@@ -63,7 +63,26 @@ def load_data(ticker: str):
                 'high': market_data.high,  # Add high
                 'low': market_data.low,    # Add low
                 'volume': market_data.volume,  # Added volume
-                'rsi_14': indicators.rsi_14, # Add RSI 14
+                'rsi_1': indicators.rsi_1,  # Add RSI 1
+                'rsi_2': indicators.rsi_2,  # Add RSI 2
+                'rsi_3': indicators.rsi_3,  # Add RSI 3
+                'rsi_4': indicators.rsi_4,  # Add RSI 4
+                'rsi_5': indicators.rsi_5,  # Add RSI 5
+                'rsi_6': indicators.rsi_6,  # Add RSI 6
+                'rsi_7': indicators.rsi_7,  # Add RSI 7
+                'rsi_8': indicators.rsi_8,  # Add RSI 8
+                'rsi_9': indicators.rsi_9,  # Add RSI 9
+                'rsi_10': indicators.rsi_10,  # Add RSI 10
+                'rsi_11': indicators.rsi_11,  # Add RSI 11
+                'rsi_12': indicators.rsi_12,  # Add RSI 12
+                'rsi_13': indicators.rsi_13,  # Add RSI 13
+                'rsi_14': indicators.rsi_14,  # Add RSI 14
+                'rsi_15': indicators.rsi_15,  # Add RSI 15
+                'rsi_16': indicators.rsi_16,  # Add RSI 16
+                'rsi_17': indicators.rsi_17,  # Add RSI 17
+                'rsi_18': indicators.rsi_18,  # Add RSI 18
+                'rsi_19': indicators.rsi_19,  # Add RSI 19
+                'rsi_20': indicators.rsi_20,  # Add RSI 20
                 'ema_20': indicators.ema_20,
                 'ema_50': indicators.ema_50,
                 'ema_200': indicators.ema_200

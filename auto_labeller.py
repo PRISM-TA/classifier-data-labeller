@@ -41,7 +41,7 @@ window_size = 20
 
 for ticker in ticker_list:
     ticker_df = load_data(ticker)
-
+    print(f"[DEBUG] Processing {ticker}...")
     for offset in range(len(ticker_df)):
         window_df = ticker_df.iloc[offset : offset + window_size]
         if len(window_df) < window_size:
@@ -66,5 +66,6 @@ for ticker in ticker_list:
             "pattern": ["uptrend", "sideways", "downtrend"][label],
             "timestamp": timestamp,
         }
+    print(f"[DEBUG] Finished processing {ticker}")
 
 save_labels(label_set, filename="auto_labels.csv")
